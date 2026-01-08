@@ -1,6 +1,8 @@
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+
 using System.Text;
 using EmployeeApi.Models;
 
@@ -12,6 +14,22 @@ builder.Services.AddDbContext<TaskDbContext>(options =>
 
 // Controllers
 builder.Services.AddControllers();
+
+//CORS
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200", "https://localhost:4200")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod()
+                  .AllowCredentials();
+        });
+});
+
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -42,6 +60,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
+app.UseCors("_myAllowSpecificOrigins");
 
 app.UseHttpsRedirection();
 

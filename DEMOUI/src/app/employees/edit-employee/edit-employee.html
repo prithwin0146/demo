@@ -1,0 +1,14 @@
+<h2>Edit Employee</h2>
+
+<form (ngSubmit)="update()">
+  <label>Name</label>
+  <input [(ngModel)]="name" name="name">
+
+  <label>Email</label>
+  <input [(ngModel)]="email" name="email">
+
+  <label>Role</label>
+  <input [(ngModel)]="role" name="role">
+
+  <button type="submit">Update</button>
+</form>

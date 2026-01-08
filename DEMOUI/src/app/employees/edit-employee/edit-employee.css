@@ -1,0 +1,10 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 12px;
+}
+button {
+  padding: 8px;
+  cursor: pointer;
+}

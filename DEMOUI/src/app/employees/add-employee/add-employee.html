@@ -1,0 +1,14 @@
+<h2>Add New Employee</h2>
+
+<form (ngSubmit)="save()">
+  <label>Name</label>
+  <input [(ngModel)]="name" name="name" placeholder="Name">
+
+  <label>Email</label>
+  <input [(ngModel)]="email" name="email" placeholder="Email">
+
+  <label>Role</label>
+  <input [(ngModel)]="role" name="role" placeholder="Role">
+
+  <button type="submit">Save</button>
+</form>

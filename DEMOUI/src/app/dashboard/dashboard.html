@@ -1,0 +1,20 @@
+<div class="dash-container">
+  <h2>Welcome to the Dashboard, {{ user }}!</h2>
+
+  <p>You are now logged in successfully.</p>
+
+  <div class="cards">
+    <div class="card" routerLink="/employees">
+      👥 Manage Employees
+    </div>
+    <div class="card">
+      📊 Reports
+    </div>
+    <div class="card">
+      ⚙️ Settings
+
+    </div>
+  </div>
+  <button (click)="logout()">Logout</button>
+
+</div>
